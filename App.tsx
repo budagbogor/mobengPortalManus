@@ -7,6 +7,7 @@ import ChatInterface from './components/ChatInterface';
 import ScoreCard from './components/ScoreCard';
 import DocumentationModal from './components/DocumentationModal';
 import ApiSettingsModal from './components/ApiSettingsModal';
+import APIStatusIndicator from './components/APIStatusIndicator';
 import { LogicTest, QUESTION_SETS } from './components/LogicTest';
 import { Briefcase, CheckCircle2, ChevronRight, BarChart3, X, Zap, Lock, UserCircle2, ArrowLeft, BookOpen, HelpCircle, CheckCircle, Save, LogOut, Phone, GraduationCap, Building2, Printer, Share2, Settings, Sliders, MonitorPlay, FileText, MessageSquare, ExternalLink, BrainCircuit, ArrowRight, Loader2, Timer, AlertTriangle, Brain, Star, Sparkles, ShieldAlert, Server, UserPlus, Send, Ban } from 'lucide-react';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
@@ -489,6 +490,7 @@ function App() {
       <div className="min-h-screen bg-gradient-to-br from-mobeng-darkblue to-mobeng-blue flex flex-col items-center justify-center p-4 relative overflow-hidden font-sans">
          <DocumentationModal isOpen={isDocsOpen} onClose={() => setIsDocsOpen(false)} role={docRole} />
          <ApiSettingsModal isOpen={isApiSettingsOpen} onClose={() => setIsApiSettingsOpen(false)} onSave={handleSaveApiKey} />
+        {currentView === 'recruiter_dashboard' && <APIStatusIndicator />}
 
          {/* Background Circles */}
          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
